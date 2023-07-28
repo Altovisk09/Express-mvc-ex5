@@ -12,7 +12,7 @@ const usersController = require('../controllers/usersController');
 
 /* GET - /users/register */
 router.get('/register', usersController.register);
-router.post('/register', validation, upload.single('avatar'), usersController.registerProcess)
+router.post('/register',  upload.single('avatar'), validation, usersController.registerProcess)
 
 /* GET - /users/login */
 router.get('/login', usersController.login);

@@ -120,12 +120,13 @@
 									<div class="form-group">
 										<label><b>Imagem do perfil:</b></label>
 										<div class="custom-file">
-											<label class="custom-file-label">Choose file...</label>
-											<input type="file" class="custom-file-input" name="avatar">
-											<div class="invalid-feedback">
-											</div>
+											<input type="file" name="avatar" class="custom-file-input <%=locals.errors && errors.avatar ? 'is-invalid' : '' %>">
+											<label class="custom-file-label">Escolha o arquivo...</label>
+											<% if (locals.errors && errors.avatar) { %>
+												<div class="invalid-feedback"><%= errors.avatar.msg %></div>
+											<% } %>
 										</div>
-									</div>
+									</div>									
 								</div>
 								<div class="col-12">
 									<button type="submit" class="btn btn-primary">Registrar-se</button>

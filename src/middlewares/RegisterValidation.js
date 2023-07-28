@@ -13,12 +13,12 @@ const validation = [
     return true;
   }),
   body('country').notEmpty().withMessage('É necessário selecionar o seu país'),
-  body('avatar').custom((value, {req})=>{
-    let AcceptExt = [".jpg", ".gif", ".png", ".jpeg"]; 
-    if (!value) {
+  body('avatar').custom((value, {req}) => {
+    if (!req.file) {
       throw new Error('Selecione uma imagem para seu perfil');
     }
-    let fileExt = path.extname(value);
+    let AcceptExt = [".jpg", ".gif", ".png", ".jpeg"]; 
+    let fileExt = path.extname(req.file.originalname);
     if (!AcceptExt.includes(fileExt)){
       throw new Error('O arquivo selecionado não é válido.');
     }
