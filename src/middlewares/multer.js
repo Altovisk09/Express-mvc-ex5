@@ -4,7 +4,7 @@ const path = require('path');
 // Configuração do armazenamento
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    let caminho = path.resolve(__dirname, '..', 'public', 'images');
+    let caminho = path.resolve(__dirname,'../../public/images/avatars');
     cb(null, caminho);
   },
   filename: (req, file, cb) => {

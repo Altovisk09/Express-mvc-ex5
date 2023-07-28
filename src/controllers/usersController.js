@@ -8,13 +8,13 @@ const usersController = {
     registerProcess: (req, res)=>{
         let resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
+            console.log(resultValidation.mapped())
           return res.render('usersRegisterForm', {
             errors: resultValidation.mapped(),
-            oldData: req.body
+            oldData: req.body,
           });
         }
-        // Lógica para processar o registro quando a validação for bem-sucedida
-        // ...
+        
     
         res.send('Deu bom');
       },
