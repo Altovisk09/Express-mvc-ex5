@@ -1,0 +1,10 @@
+[
+ {
+  "id": 1,
+  "fullname": "adm",
+  "email": "adm@teste.com",
+  "password": 123,
+  "country": "Brazil",
+  "avatar": "default.png"
+ }
+]
