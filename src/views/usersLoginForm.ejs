@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head'); %>
+<body>
+	<%- include('partials/navbar'); %>
+	
+	<div class="container" style="margin-top:30px; margin-bottom: 30px;">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<h2>Formulário de Login</h2>
+	
+				<form method="POST" action="/users/login">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Email:</b></label>
+								<input type="text" name="email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : '' %>">
+								<%if(locals.errors && errors.email){%>
+								<div class="invalid-feedback"><%=errors.email.msg%></div>
+							<% } %>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label><b>Senha:</b></label>
+								<input type="password" name="password" class="form-control <%=locals.errors &&errors.password ? 'is-invalid' : '' %>">
+								<%if(locals.errors && errors.password){%>
+								<div class="invalid-feedback"><%=errors.password.msg%></div>
+							<% } %>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group form-check">
+								<label class="form-check-label">
+									<input type="checkbox" class="form-check-input" name="remember_user">Recordar meu usuário
+								</label>
+							</div>
+						</div>
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary">Registrar-se</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<%- include('partials/footer'); %>
+</body>
+</html>
