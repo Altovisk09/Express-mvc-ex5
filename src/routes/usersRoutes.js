@@ -26,5 +26,6 @@ router.get('/profile', notLogged, usersController.profile);
 
 router.get('/logout', usersController.logout )
 
-router.get('/teste', usersController.teste)
+router.post('/delete/:id', usersController.delete);
+
 module.exports = router;

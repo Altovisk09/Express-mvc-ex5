@@ -1,26 +1,18 @@
 [
-    {
-        "id": 1,
-        "fullname": "adm",
-        "email": "adm@teste.com",
-        "password": 123,
-        "country": "Brazil",
-        "avatar": "default.png"
-    },
-    {
-        "id": 2,
-        "full_name": "Eric Elias ",
-        "email": "ericaltao13@gmail.com",
-        "password": "123456",
-        "country": "Bra",
-        "avatar": "imageprofile1690648386110.jpg"
-    },
-    {
-        "id": 3,
-        "full_name": "adm",
-        "email": "adm@adm.com",
-        "password": "123456",
-        "country": "Arg",
-        "avatar": "imageprofile1690603421302.png"
-    }
+ {
+  "id": 1,
+  "fullname": "adm",
+  "email": "adm@teste.com",
+  "password": 123,
+  "country": "Brazil",
+  "avatar": "default.png"
+ },
+ {
+  "id": 2,
+  "full_name": "Eric Elias ",
+  "email": "ericaltao13@gmail.com",
+  "password": "123456",
+  "country": "Bra",
+  "avatar": "imageprofile1690648386110.jpg"
+ }
 ]

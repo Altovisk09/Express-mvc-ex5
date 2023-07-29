@@ -13,10 +13,12 @@
 				<br>
 				<div class="alert alert-success"><%=locals.userValid.email%></div>
 				<div class="alert alert-success"><%=locals.userValid.country%></div>
+				<form action="/users/delete/<%=locals.userValid.id%>" method="POST">
+				<button type="submit" class="btn btn-danger">Deletar Conta</button>
+				</form>
 			</div>
 		</div>
 	</div>
-	
 	<%- include('partials/footer'); %>
 </body>
 </html>

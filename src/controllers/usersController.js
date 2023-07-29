@@ -54,9 +54,10 @@ const usersController = {
       res.clearCookie('logMail');
       res.redirect('/')
     },
-    teste:(req, res)=>{
-      
-      console.log(req.locals.user)
+    delete: function (req, res) {
+      const id = req.params.id;
+      Users.deleteAccount(id);
+      usersController.logout(req, res);
     },
 };
 

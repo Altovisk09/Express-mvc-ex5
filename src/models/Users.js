@@ -44,6 +44,15 @@ const Users = {
         let userFound = allUsers.find(user => user[field] === value)
         return userFound
     },
+    deleteAccount: function(id){
+        let allUsers = this.getData();
+        let filteredUsers = allUsers.filter((user)=>user.id != id)
+        fs.writeFileSync(this.filename, JSON.stringify(filteredUsers, null , ' '))
+        return filteredUsers;
+    },
+    editAccount: function(){
+
+    }
 }
 
 module.exports = Users;
