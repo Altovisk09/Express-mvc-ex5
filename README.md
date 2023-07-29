@@ -15,7 +15,8 @@ Nesse projeto, o sistema de cadastro e login estão funcionando, então caso que
 - Possibilidade de apagar sua conta, caso queira
 - Multer devidamente configurado
 - Middlewares para validação de rotas
-
+- Banner Carrosel
+- 
 ## Como instalar o projeto
 
 **Requisitos**
