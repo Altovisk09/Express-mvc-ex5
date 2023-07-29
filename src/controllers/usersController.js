@@ -37,12 +37,21 @@ const usersController = {
         delete userValidad.password;
         req.session.user = userValidad
       }
-      console.log(req.session.user)
+      if(req.body.remember_user){
+        let userValid = req.session.user
+         res.cookie('logMail',userValid.email, { maxAge: 1000 * 60 * 60 });
+      }
       res.redirect('/')
   },
 
     profile:(req,res)=>{
         res.render('userProfile')
+    },
+
+    logout:(req, res)=>{
+      req.session.destroy();
+      res.clearCookie('logMail');
+      res.redirect('/')
     },
 };
 

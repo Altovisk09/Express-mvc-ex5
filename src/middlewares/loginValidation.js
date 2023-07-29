@@ -16,7 +16,6 @@ const validation = [
     .notEmpty().withMessage('Insira sua senha').bail()
     .custom((value, { req }) => {
       const user = req.body.email ? Users.findUserByField('email', req.body.email) : null;
-      console.log(user)
       if (!user) {
         throw new Error('Erro interno de validação');
       }else if (value !== user.password) {

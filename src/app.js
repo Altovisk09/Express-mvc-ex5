@@ -4,7 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const logger = require('morgan');
 const path = require('path');
-
+const sessionLog = require('./middlewares/sessionLog')
 
 const app = express();
   
@@ -20,6 +20,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(sessionLog)
 
 app.set('view engine', 'ejs');
 app.set('views', './src/views'); // Configuração da localização da pasta "views"
