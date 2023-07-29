@@ -35,12 +35,13 @@ const usersController = {
      let userValidad = Users.findUserByField('email', req.body.email)
       if(userValidad){
         delete userValidad.password;
-        req.session.user = userValidad
+        req.session.user = userValidad;
       }
       if(req.body.remember_user){
-        let userValid = req.session.user
-         res.cookie('logMail',userValid.email, { maxAge: 1000 * 60 * 60 });
-      }
+        let userValid = req.session.user;
+        res.cookie('logMail',userValid.email, { maxAge: 1000 * 60 * 60 });
+        
+      } 
       res.redirect('/')
   },
 
@@ -52,6 +53,10 @@ const usersController = {
       req.session.destroy();
       res.clearCookie('logMail');
       res.redirect('/')
+    },
+    teste:(req, res)=>{
+      
+      console.log(req.locals.user)
     },
 };
 

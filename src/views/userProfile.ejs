@@ -7,11 +7,12 @@
 	<div class="container" style="margin-top: 40px;">
 		<div class="row">
 			<div class="col-md-3">
-				<h2>teste</h2>
-				<img src="/images/avatars/default.png" width="100%">
+				<h2>Olá <%=locals.userValid.full_name%></h2>
+				<img src="/images/avatars/<%=locals.userValid.avatar%>" width="100%">
 				<br>
 				<br>
-				<div class="alert alert-success">user@email.com</div>
+				<div class="alert alert-success"><%=locals.userValid.email%></div>
+				<div class="alert alert-success"><%=locals.userValid.country%></div>
 			</div>
 		</div>
 	</div>

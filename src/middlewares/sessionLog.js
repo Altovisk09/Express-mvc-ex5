@@ -5,14 +5,19 @@ function session(req, res, next) {
     const userEmailFromCookie = req.cookies.logMail;
     
     if (userEmailFromSession && userEmailFromCookie) {
-        const userValidation = Users.findUserByField('email', userEmailFromCookie);
-        if (userValidation && userValidation.email === userEmailFromSession) {
+        const userValid = Users.findUserByField('email', userEmailFromCookie);
+        delete userValid.password;
+        if (userValid && userValid.email === userEmailFromSession) {
             res.locals.logged = true;
+            res.locals.userValid = userValid;
         } else {
             res.locals.logged = false;
         }
     } else {
         if (req.session.user) {
+            let userValid = req.session.user;
+            delete userValid.password;
+            res.locals.userValid = userValid;
             res.locals.logged = true;
         } else {
             res.locals.logged = false;

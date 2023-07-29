@@ -25,4 +25,6 @@ router.post('/login', validationLog, usersController.loginProcess)
 router.get('/profile', notLogged, usersController.profile);
 
 router.get('/logout', usersController.logout )
+
+router.get('/teste', usersController.teste)
 module.exports = router;
